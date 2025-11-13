@@ -4,10 +4,20 @@
 import os
 from pathlib import Path
 from typing import Dict, Any
+from dotenv import load_dotenv
 
 
 # 프로젝트 루트 경로
 PROJECT_ROOT = Path(__file__).parent.parent
+
+# .env 파일 로드 (프로젝트 루트에서 찾기)
+env_path = PROJECT_ROOT / '.env'
+if env_path.exists():
+    load_dotenv(env_path)
+    print(f"✅ .env 파일 로드 완료: {env_path}")
+else:
+    # .env 파일이 없으면 환경 변수만 사용
+    print(f"ℹ️ .env 파일을 찾을 수 없습니다: {env_path}")
 
 
 class Config:
@@ -23,7 +33,10 @@ class Config:
     JSON_OUTPUT_PATH = PROJECT_ROOT / 'data' / 'json' / 'keyword_phrase_mapping_BGE-m3-ko_HDBSCAN_oct.json'
     TAG_CONFIG_PATH = PROJECT_ROOT / 'app' / 'tag_config.json'
     
+    # API 설정
+    GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', '')
     GEMINI_MODEL = 'gemini-2.5-flash-lite'
+    KMA_API_KEY = os.getenv('KMA_API_KEY', '')  # 기상청 API 키
     KMA_STN_ID = '108'  # 서울 지점번호
     
     # 데이터 처리 설정

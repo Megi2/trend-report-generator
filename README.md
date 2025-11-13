@@ -13,7 +13,7 @@ bash quick_use.sh
 
 ```bash
 # 1. 가상환경 생성
-python3 -m venv .venv
+python3.9 -m venv .venv
 
 # 2. 활성화 (zsh)
 source .venv/bin/activate
@@ -23,7 +23,7 @@ pip install --upgrade pip
 pip install -r app/requirements.txt
 
 # 4. 실행
-python3 main.py
+python3 app/main.py
 ```
 
 주의사항:

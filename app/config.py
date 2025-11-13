@@ -23,10 +23,7 @@ class Config:
     JSON_OUTPUT_PATH = PROJECT_ROOT / 'data' / 'json' / 'keyword_phrase_mapping_BGE-m3-ko_HDBSCAN_oct.json'
     TAG_CONFIG_PATH = PROJECT_ROOT / 'app' / 'tag_config.json'
     
-    # API 설정
-    GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyDqOVMzHJ3EHQ8psHCPaCxrf6LEYkEw-Ko')
     GEMINI_MODEL = 'gemini-2.5-flash-lite'
-    KMA_API_KEY = os.getenv('KMA_API_KEY', '3BL52U-CTNyS-dlPglzclw')  # 기상청 API 키
     KMA_STN_ID = '108'  # 서울 지점번호
     
     # 데이터 처리 설정

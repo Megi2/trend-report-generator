@@ -1,0 +1,19 @@
+__pycache__/
+venv/
+env/
+.env
+
+# Data files (large files, sensitive data)
+data/origin_data/*.csv
+data/json/*.json
+data/weather/*.csv
+*.csv
+!requirements.txt
+
+# PPT files (generated)
+pptx/generated/*.pptx
+pptx/template/~$*.pptx
+*.pptx
+!pptx/template/*.pptx
+
+.DS_Store

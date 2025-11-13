@@ -1,0 +1,11 @@
+numpy==1.24.1
+pandas
+sentence-transformers 
+scikit-learn 
+matplotlib 
+seaborn
+google-genai
+umap-learn 
+hdbscan
+python-pptx
+requests

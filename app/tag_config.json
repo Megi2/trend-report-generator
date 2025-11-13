@@ -1,0 +1,179 @@
+{
+  "TITLE_AREA": {
+    "type": "text",
+    "font_size": 36,
+    "font_bold": true,
+    "font_color": [255, 255, 255],
+    "alignment": "center",
+    "length_guideline": { "chars_max": 16 },
+    "prompt_template": "트렌드 레포트 {month}호"
+  },
+
+  "INTRO_AREA": {
+    "type": "text",
+    "font_size": 11,
+    "font_bold": false,
+    "alignment": "center",
+    "length_guideline": { "lines": 3, "chars_approx": 150 },
+    "prompt_template": "다음과 같은 스타일과 볼륨의 인트로 문구를 작성해주세요:\n\n예시:\n\"길어진 여름 덕분에, 여전히 여름을 위한 뷰티·헬스 제품이 손에서 떠나지 않습니다.\n이번 칼럼에서는 흐려진 계절의 경계가 실제 기온 변화와 어떻게 맞물리는지,\n또 그 흐름이 뷰티·헬스 카테고리의 소비 패턴에 어떤 변화를 만들어내는지 짚어보려 합니다.\"\n\n현재는 {current_year}년 {month}입니다. {current_year}년 {month}의 평균기온은 {weather_current_temp}℃로, 20년 평균({weather_historical_avg}℃) 대비 {weather_comparison} 예년 대비 {weather_normal_comparison}. 이 시기의 계절성 흐름과 특성을 반영하여, 위와 비슷한 길이와 톤의 인트로 문구를 작성해주세요. 기온 정보를 자연스럽게 포함하되, 수치를 직접적으로 나열하지 말고 문맥에 녹여서 작성해주세요. 트렌드 리포트의 인트로로 사용할 것입니다.\n\n중요 지시사항:\n- 옵션을 제시하지 말고 바로 인트로 문구만 작성해주세요\n- 마크다운 문법(##, **, __ 등)은 사용하지 말고 순수 텍스트로만 작성해주세요\n- 예시와 비슷한 길이(2-3문장)로 작성해주세요\n- 기온 정보는 자연스럽게 문맥에 포함하되, \"{weather_current_temp}℃\" 같은 수치를 직접 나열하지 말고 \"평균기온이 평년보다 높았던\" 같은 표현으로 자연스럽게 작성해주세요"
+  },
+
+  "SUBTITLE1_AREA": {
+    "type": "text",
+    "font_size": 18,
+    "font_bold": true,
+    "alignment": "center",
+    "length_guideline": { "lines": 1, "chars_max": 20 },
+    "prompt_template": "{month}, 어떤 키워드가 인기였을까?"
+  },
+
+  "DESCRIPTION1_AREA": {
+    "type": "text",
+    "font_size": 11,
+    "font_bold": false,
+    "alignment": "center",
+    "length_guideline": { "lines": 4, "chars_approx": 200 },
+    "prompt_template": "다음은 {month} 트렌드 리포트의 버블차트에서 나타난 상위 인기 키워드/프레이즈와 각 프레이즈를 구성하는 주요 키워드들입니다:\n\n상위 5개 프레이즈 및 주요 키워드:\n{phrase_info_text}\n\n이 정보를 바탕으로 일반인들이 읽기 쉬운 트렌드 리포트 설명 문구를 작성해주세요.\n\n작성 가이드:\n1. 각 프레이즈와 키워드들이 어떤 의미인지, 어떤 제품이나 트렌드를 나타내는지 설명\n2. {month}의 계절적 특성(날씨, 계절 변화, 소비자 행동 패턴 등)과 연결하여 왜 이 키워드들이 인기를 얻었는지 설득력 있게 설명\n3. 예를 들어, 가을이라면 \"가을 날씨 변화로 인해...\" 또는 \"10월의 계절적 특성상...\" 같은 식으로 계절성과 자연스럽게 연결\n4. 소비자들이 왜 이 키워드에 관심을 가지게 되었는지, 어떤 니즈나 상황이 반영되었는지 설명\n5. 일반인들이 이해하기 쉽고, 트렌드를 읽을 수 있도록 작성 (3-4문장 정도)\n\n절대 금지사항:\n- CTR, 노출수, 클릭수, 회, % 등 어떤 수치 데이터도 절대 언급하지 마세요\n- \"가장 많은\", \"높은 수치\", \"기록\" 같은 수치를 암시하는 표현도 사용하지 마세요\n- 마크다운 문법(##, ** 등)은 사용하지 말고 순수 텍스트로만 작성\n- 옵션을 제시하지 말고 바로 설명 문구만 작성\n\n중요: 이 설명은 일반인들이 읽는 트렌드 리포트이므로, 수치나 데이터 분석보다는 계절성과 트렌드의 의미, 소비자 관심사에 초점을 맞춰 작성해주세요."
+  },
+
+  "CHART1_AREA": {
+    "type": "chart",
+    "chart_kind": "bubble",
+    "metric": "impressions",
+    "top_n": 10,
+    "data_binding": {
+      "source": "{dataset_name}",
+      "group_key": "keyword_group",
+      "x": "impressions_rank",
+      "y": "avg_position_or_alt_metric",
+      "size": "impressions"
+    },
+    "note": "노출수 높은 그룹 10개 버블"
+  },
+
+  "DESCRIPTION2_AREA": {
+    "type": "text",
+    "font_size": 11,
+    "font_bold": false,
+    "alignment": "center",
+    "length_guideline": { "lines": 1, "chars_max": 100 },
+    "prompt_template": "{month} 트렌드 리포트에서 트위즈 고객들이 실제로 클릭한 키워드들을 살펴보겠습니다. 차트를 소개하는 자연스럽고 부드러운 인트로 멘트를 작성해주세요. '그렇다면 고객들이 실제로 클릭한 키워드는 무엇일까요?' 같은 톤으로 질문형으로 작성하되, 과장되거나 부담스러운 표현('이끄는', '신나', '대단한' 등)은 피하고 자연스럽고 편안한 톤으로 작성하세요. 1문장, 최대 100자 이내로 간결하게 작성하세요."
+  },
+
+  "CHART2_AREA": {
+    "type": "chart",
+    "chart_kind": "bubble",
+    "metric": "ctr",
+    "top_n": 10,
+    "data_binding": {
+      "source": "{dataset_name}",
+      "group_key": "keyword_group",
+      "x": "ctr_rank",
+      "y": "avg_position_or_alt_metric",
+      "size": "ctr"
+    },
+    "note": "CTR 높은 그룹 10개 버블"
+  },
+
+  "DESCRIPTION3_AREA": {
+    "type": "text",
+    "font_size": 11,
+    "font_bold": false,
+    "alignment": "center",
+    "length_guideline": { "lines": 4, "chars_approx": 200 },
+    "prompt_template": "다음은 {month} 트렌드 리포트의 CTR 기준 버블차트에서 나타난 상위 키워드/프레이즈와 각 프레이즈를 구성하는 주요 키워드들입니다.\n이 차트는 전체 바이럴 대비 트위즈 고객들이 좋아한(높은 CTR을 보인) 키워드를 보여줍니다.\n\n상위 5개 프레이즈 및 주요 키워드:\n{phrase_info_text_ctr}\n\n이 정보를 바탕으로 설명 문구를 작성해주세요.\n\n작성 가이드:\n3. 각 프레이즈와 키워드들이 어떤 의미인지, 어떤 제품이나 트렌드를 나타내는지 설명\n4. {month}의 계절적 특성과 연결하여 왜 트위즈 고객들이 이 키워드에 집중했는지 설명\n5. 트위즈 고객들의 특성이나 니즈가 반영된 이유를 설명\n6. 일반인들이 이해하기 쉽고, 트렌드를 읽을 수 있도록 작성 (3-4문장 정도)\n\n절대 금지사항:\n- CTR, 노출수, 클릭수, 회, % 등 어떤 수치 데이터도 절대 언급하지 마세요\n- \"가장 많은\", \"높은 수치\", \"기록\" 같은 수치를 암시하는 표현도 사용하지 마세요\n- 마크다운 문법(##, ** 등)은 사용하지 말고 순수 텍스트로만 작성\n- 옵션을 제시하지 말고 바로 설명 문구만 작성\n\n중요: 이 설명은 트위즈 고객들이 집중한 키워드에 대한 것이므로, 고객들의 관심사와 니즈에 초점을 맞춰 작성해주세요."
+  },
+
+  "KEYWORD1_AREA": {
+    "type": "text",
+    "font_size": 18,
+    "font_bold": true,
+    "alignment": "center",
+    "length_guideline": { "lines": 1, "chars_max": 20 },
+    "prompt_template": "다음은 {month} 트렌드 리포트의 노출수 기준 상위 5개 프레이즈와 각 프레이즈를 구성하는 주요 키워드들입니다:\n\n상위 5개 프레이즈 및 주요 키워드:\n{phrase_info_text}\n\n이 정보를 바탕으로 {month}에 SNS를 휩쓴 하나의 핵심 키워드를 짚어내주세요. 서로 다른 두 가지 이상의 트렌드가 포함되어서는 안됨. 명확하고 명료하게 와닿는 단 하나의 키워드만 뽑아낼 것. 가장 대표적인 키워드나 프레이즈를 자연스럽게 문장에 포함하되, 키워드 혹은 프레이즈를 그대로 차용하지 말고 자연스럽고 읽기 좋게 작성하세요. 특정 브랜드를 언급하는 내용은 제외해주세요. 최대 20자 이내로 간결하게 작성하세요."
+  },
+
+  "INSIGHT1_AREA": {
+    "type": "text",
+    "font_size": 11,
+    "font_bold": false,
+    "alignment": "center",
+    "length_guideline": { "lines": 3, "chars_approx": 100 },
+    "prompt_template": "다음은 {month} 트렌드 리포트의 인사이트 섹션입니다.\n\n인사이트 타이틀: \"{insight_title}\"\n\n이 인사이트 타이틀을 바탕으로 인사이트를 작성해주세요.\n\n작성 가이드:\n1. 타이틀이 의미하는 바를 포괄적으로 설명 (2-3문장)\n   - 이 타이틀이 무엇을 의미하는지 명확하게 설명\n   - 하나의 핵심 주제에 집중하여 설명\n\n2. 해당 트렌드의 배경과 맥락을 포괄적으로 설명 (2-3문장)\n   - {month} 시기 뷰티·헬스 트렌드의 전반적인 맥락 설명\n   - 왜 이런 트렌드가 나타났는지 배경 설명\n   - 소비자 행동이나 시장 동향과의 연결\n   - 계절적 특성과의 연관성\n\n중요 지시사항:\n- 전체적으로 4-5문장으로 구성\n- 자연스럽고 읽기 쉬운 문체\n- 수치 데이터는 언급하지 않음\n- 마크다운 문법 사용하지 않음\n- 옵션 제시하지 않고 바로 내용만 작성"
+  },
+
+  "PRODUCT1_AREA": {
+    "type": "list",
+    "font_size": 11,
+    "alignment": "center",
+    "length_guideline": { "items_max": 3, "item_chars_max": 30 },
+    "prompt_template": "인사이트와 자연스럽게 연결되는 상품을 {product_catalog}에서 1–3개 선택해, 짧은 효용 문구로 표기."
+  },
+
+  "WORDCLOUD_OR_IMAGE_AREA": {
+    "type": "asset",
+    "mode": "wordcloud_or_image",
+    "data_binding": {
+      "source": "{dataset_name}",
+      "keywords_field": "related_keywords"
+    },
+    "note": "키워드 워드클라우드 또는 대표 이미지"
+  },
+
+  "KEYWORD2_AREA": {
+    "type": "text",
+    "font_size": 18,
+    "font_bold": true,
+    "alignment": "center",
+    "length_guideline": { "lines": 1, "chars_max": 20 },
+    "prompt_template": "다음은 {month} 트렌드 리포트의 CTR 기준 상위 5개 프레이즈와 각 프레이즈를 구성하는 주요 키워드들입니다:\n\n상위 5개 프레이즈 및 주요 키워드:\n{phrase_info_text_ctr}\n\n이 정보를 바탕으로 {month}에 고객 시선을 사로잡은 하나의 핵심 키워드를 짚어내주세요. 서로 다른 두 가지 이상의 트렌드가 포함되어서는 안됨. 명확하고 명료하게 와닿는 단 하나의 키워드만 뽑아낼 것. 가장 대표적인 키워드나 프레이즈를 자연스럽게 문장에 포함하되, 키워드 혹은 프레이즈를 그대로 차용하지 말고 자연스럽고 읽기 좋게 작성하세요. 특정 브랜드를 언급하는 내용은 제외해주세요. 최대 20자 이내로 간결하게 작성하세요."
+  },
+
+  "INSIGHT2_AREA": {
+    "type": "text",
+    "font_size": 11,
+    "font_bold": false,
+    "alignment": "center",
+    "length_guideline": { "lines": 3, "chars_approx": 100 },
+    "prompt_template": "다음은 {month} 트렌드 리포트의 인사이트 섹션입니다.\n\n인사이트 타이틀: \"{insight_title2}\"\n\n이 인사이트 타이틀을 바탕으로 Insight2 섹션을 작성해주세요.\n\n작성 가이드:\n1. 타이틀이 의미하는 바를 포괄적으로 설명 (2-3문장)\n   - 이 타이틀이 무엇을 의미하는지 명확하게 설명\n   - 하나의 핵심 주제에 집중하여 설명\n\n2. 해당 트렌드의 배경과 맥락을 포괄적으로 설명 (2-3문장)\n   - {month} 시기 뷰티·헬스 트렌드의 전반적인 맥락 설명\n   - 왜 이런 트렌드가 나타났는지 배경 설명\n   - 소비자 행동이나 시장 동향과의 연결\n   - 계절적 특성과의 연관성\n\n중요 지시사항:\n- 전체적으로 4-5문장으로 구성\n- 자연스럽고 읽기 쉬운 문체\n- 수치 데이터는 언급하지 않음\n- 마크다운 문법 사용하지 않음\n- 옵션 제시하지 않고 바로 내용만 작성"
+  },
+
+  "PRODUCT2_AREA": {
+    "type": "list",
+    "font_size": 11,
+    "alignment": "center",
+    "length_guideline": { "items_max": 3, "item_chars_max": 30 },
+    "prompt_template": "해당 키워드와 랜딩 일치도가 높은 상품 1–3개를 제시하고, 한 줄 효용 문구를 덧붙여라."
+  },
+
+  "WORDCLOUD_OR_IMAGE_AREA_2": {
+    "type": "asset",
+    "mode": "wordcloud_or_image",
+    "data_binding": {
+      "source": "{dataset_name}",
+      "keywords_field": "related_keywords"
+    },
+    "note": "키워드 워드클라우드 또는 대표 이미지"
+  },
+
+  "TRENDS_AREA": {
+    "type": "composite",
+    "font_size": 11,
+    "alignment": "center",
+    "length_guideline": { "blocks": 2, "block_lines_max": 4 },
+    "prompt_template": "최근 3개월 비교로 ① 급부상 3–5개(짧은 근거) ② 현상 유지 3–5개(지속 이유)로 구분해 출력.",
+    "output_shape": {
+      "rising_keywords": [{ "keyword": "string", "why": "string" }],
+      "steady_keywords": [{ "keyword": "string", "why": "string" }]
+    }
+  },
+
+  "OUTRO_AREA": {
+    "type": "text",
+    "font_size": 11,
+    "font_bold": false,
+    "alignment": "center",
+    "length_guideline": { "lines_max": 2, "chars_approx": 80 },
+    "prompt_template": "이번 호 핵심을 1문장으로 정리하고, 다음 호 예고를 짧게 덧붙여라."
+  }
+}
